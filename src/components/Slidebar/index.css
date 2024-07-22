@@ -1,0 +1,20 @@
+.display {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+}
+.display-flex {
+  display: flex;
+}
+p {
+  padding: 10px;
+  font-size: 26px;
+  color: rgb(145, 119, 119);
+  font-family: 'sans-serif';
+}
+.element {
+  text-decoration: none;
+}
+.logo {
+  width: 200px;
+}

@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+/* .home {
+  background-image: linear-gradient(to right, blue, lightblue);
+} */
+.home {
+  background-image: linear-gradient(to bottom, white, rgb(255, 0, 251));
+}
+.para {
+  color: black;
+  margin: 30px;
+}
+.button {
+  margin-left: 450px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: blue;
+  color: white;
+  margin-bottom: 50px;
+}

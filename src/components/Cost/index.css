@@ -1,0 +1,16 @@
+.cost {
+  background-image: linear-gradient(to bottom, white, blue);
+}
+.c-p {
+  color: black;
+  margin-left: 100px;
+}
+.c-m {
+  color: white;
+}
+span {
+  font-size: 20px;
+}
+h2 {
+  padding-left: 50px;
+}

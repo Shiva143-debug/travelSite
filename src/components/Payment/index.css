@@ -1,0 +1,42 @@
+.p-p {
+  color: black;
+  padding-left: 50px;
+  font-size: 18px;
+}
+h2 {
+  padding-left: 50px;
+}
+.payment {
+  background-image: linear-gradient(to bottom, white, green);
+}
+input {
+  width: 300px;
+  margin-bottom: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+.input-c {
+  width: 30px;
+  margin-left: 20px;
+}
+form {
+  margin-left: 200px;
+  border: 1px solid red;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-right: 400px;
+}
+.button-b {
+  margin-left: 50px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: blue;
+  color: white;
+  margin-bottom: 10px;
+  width: 200px;
+}
+label {
+  font-weight: bold;
+}

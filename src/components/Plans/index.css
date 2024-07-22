@@ -1,0 +1,19 @@
+.main-list-container {
+  display: flex;
+  margin-left: 300px;
+}
+.r-text {
+  color: black;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+.r-image {
+  width: 800px;
+  height: 400px;
+  margin-left: 100px;
+}
+.payment-info {
+  color: white;
+  text-align: center;
+}
