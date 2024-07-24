@@ -2,7 +2,7 @@ import Slidebar from "../Slidebar"
 import "./index.css"
 
 const contactUs = () => (
-  <>
+  <div>
   <Slidebar/>
   <div class ="contact" style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
     
@@ -12,6 +12,6 @@ const contactUs = () => (
       +919739255255 <br />* sg@travelunbounded.com +919884023028
     </h2>
   </div>
-  </>
+  </div>
 )
 export default contactUs
