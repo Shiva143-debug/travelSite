@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Payment from '../Payment'
 import './index.css'
+import Slidebar from '../Slidebar'
 
 const Cost = () => {
   const [showAnotherComponent, setShowAnotherComponent] = useState(false)
@@ -13,6 +14,7 @@ const Cost = () => {
         <Payment />
       ) : (
         <div className="cost">
+          <Slidebar/>
           <p className="c-p">
             * <span>Cost per adult, Ex Nairobi</span> - USD1582/- incl of local
             taxes
@@ -33,9 +35,11 @@ const Cost = () => {
             do you want to visit the places please press the below button to
             make payments
           </p>
+          <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
           <button type="button" onClick={makePayment} className="button">
             make payment
           </button>
+          </div>
         </div>
       )}
     </div>

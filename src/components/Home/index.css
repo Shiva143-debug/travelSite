@@ -6,14 +6,19 @@ h1 {
   background-image: linear-gradient(to right, blue, lightblue);
 } */
 .home {
-  background-image: linear-gradient(to bottom, white, rgb(255, 0, 251));
+  /* background-image: linear-gradient(to bottom, white, rgb(255, 0, 251)); */
+  background-image: url(https://res.cloudinary.com/dxgbxchqm/image/upload/v1721734044/black-white_iidqap.webp);
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  height: 100%;
 }
 .para {
-  color: black;
+  color: white;
   margin: 30px;
 }
 .button {
-  margin-left: 450px;
+
   padding: 10px;
   border: 1px solid gray;
   border-radius: 8px;

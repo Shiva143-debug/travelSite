@@ -5,16 +5,34 @@
 }
 .display-flex {
   display: flex;
+  @media (max-width:768px) {
+    display: none;
+  }
 }
 p {
   padding: 10px;
   font-size: 26px;
-  color: rgb(145, 119, 119);
+  /* color: rgb(145, 119, 119); */
+  color:white;
   font-family: 'sans-serif';
 }
 .element {
   text-decoration: none;
+  color: white;
 }
 .logo {
   width: 200px;
+}
+
+.hamburger-menu {
+  display: none; /* Hide by default */
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block; 
+    display: flex;
+    margin-top: 20px;
+    margin-right: 50px;
+  }
 }

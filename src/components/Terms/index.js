@@ -1,7 +1,9 @@
+import Slidebar from '../Slidebar'
 import './index.css'
 
 const Terms = () => (
   <div className="terms">
+    <Slidebar/>
     <p className="t-p">
       * Costs are based at 4 paxs per vehicle for game drives and 5 per vehicle
       for Internal transfers .

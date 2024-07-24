@@ -1,9 +1,13 @@
 .cost {
-  background-image: linear-gradient(to bottom, white, blue);
+   background-image: url(https://res.cloudinary.com/dxgbxchqm/image/upload/v1721734044/black-white_iidqap.webp);
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  height: 100%;
 }
 .c-p {
-  color: black;
-  margin-left: 100px;
+  color: white;
+  margin-left: 50px;
 }
 .c-m {
   color: white;

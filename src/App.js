@@ -37,7 +37,7 @@ import './App.css';
 
 const App = () => (
   <BrowserRouter>
-    <Slidebar />
+    {/* <Slidebar /> */}
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/plans" element={<Plans />} />

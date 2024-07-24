@@ -1,8 +1,12 @@
 .terms {
-  background-color: aliceblue;
+  background-image: url(https://res.cloudinary.com/dxgbxchqm/image/upload/v1721734044/black-white_iidqap.webp);
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  height: 100%;
 }
 .t-p {
   padding-left: 50px;
-  color: black;
+  color: white;
   font-size: 20px;
 }

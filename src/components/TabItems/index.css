@@ -5,11 +5,12 @@
   margin: 10px;
 }
 .Tabclass {
-  background-color: lightcyan;
+  background-color: rgb(202, 193, 193);
   border-radius: 4px;
   border: none;
   padding: 10px;
 }
 .active {
   background-color: blue;
+  color: white;
 }

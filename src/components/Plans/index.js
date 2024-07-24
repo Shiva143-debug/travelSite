@@ -7,6 +7,7 @@ import './index.css'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Slidebar from '../Slidebar'
 
 const List = [
   {
@@ -109,12 +110,13 @@ class Plans extends Component {
   render() {
     const {activeId, showPayment} = this.state
     return (
-      <div className="home">
+      <div className="plans">
         <div>
           {showPayment ? (
             <Payment />
           ) : (
             <div>
+              <Slidebar/>
               <ul className="main-list-container">
                 {List.map(each => (
                   <TabItems
@@ -130,9 +132,11 @@ class Plans extends Component {
                 do you want to visit the places please press the below button to
                 make payments
               </p>
+              <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
               <button type="button" onClick={this.make} className="button">
                 make payment
               </button>
+              </div>
             </div>
           )}
         </div>

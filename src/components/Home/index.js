@@ -2,6 +2,7 @@ import {useState} from 'react'
 
 import Plans from '../Plans'
 import './index.css'
+import Slidebar from '../Slidebar'
 
 const Home = () => {
   const [showAnotherComponent, setShowAnotherComponent] = useState(false)
@@ -15,6 +16,7 @@ const Home = () => {
         <Plans />
       ) : (
         <div>
+          <Slidebar/>
           <h1>Big Cats Week at Maasai Mara - Diwali 2023 special</h1>
           <p className="para">
             November is one of the Best times to visit Kenya, especially to
@@ -37,9 +39,11 @@ const Home = () => {
           </p>
 
           <h1>Join us on this unforgettable journey of your life time.</h1>
+          <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
           <button type="button" onClick={buttonClick} className="button">
             see the plans
           </button>
+          </div>
         </div>
       )}
     </div>
