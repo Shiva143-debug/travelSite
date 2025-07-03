@@ -1,52 +1,56 @@
-import {useState} from 'react'
-
-import Plans from '../Plans'
-import './index.css'
-import Slidebar from '../Slidebar'
+import Slidebar from '../Slidebar';
+import { useNavigate } from 'react-router-dom';
+import './index.css';
 
 const Home = () => {
-  const [showAnotherComponent, setShowAnotherComponent] = useState(false)
+  const navigate = useNavigate();
+
   const buttonClick = () => {
-    setShowAnotherComponent(true)
-  }
+    navigate('/plans');
+  };
 
   return (
     <div className="home">
-      {showAnotherComponent ? (
-        <Plans />
-      ) : (
-        <div>
-          <Slidebar/>
-          <h1>Big Cats Week at Maasai Mara - Diwali 2023 special</h1>
-          <p className="para">
-            November is one of the Best times to visit Kenya, especially to
-            visit its prime park, Maasai Mara. This is because the large
-            migratory herds would have returned to Tanzania and now the Big cats
-            have to venture long distances to hunt their prey.
-          </p>
-          <p className="para">
-            November is also the season of short rains. This makes the plains of
-            Maasai Mara lush green. The skies are truly dramatic and colourful.
-            The Sun rise and Sun sets during November at Mara is simply breath
-            taking.
-          </p>
-          <p className="para">
-            November is also a time for holidaying and getting together with our
-            families. And the icing on the cake is we have curated this
-            itinerary for such an affordable costs without compromising on any
-            of the services. This is commemorate our first year anniversary of
-            opening up operations at Nairobi.
+        <Slidebar />
+        <div className=" text-white py-5 px-2">
+          <h1 className="home-title text-center mb-4">
+            Big Cats Week at Maasai Mara - Diwali 2023 Special
+          </h1>
+
+          <p className="home-para">
+            November is one of the best times to visit Kenya, especially its
+            prime park, Maasai Mara. This is because the large migratory herds
+            would have returned to Tanzania, and now the big cats have to
+            venture long distances to hunt their prey.
           </p>
 
-          <h1>Join us on this unforgettable journey of your life time.</h1>
-          <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <button type="button" onClick={buttonClick} className="button">
-            see the plans
-          </button>
+          <p className="home-para">
+            November is also the season of short rains. This makes the plains
+            of Maasai Mara lush green. The skies are truly dramatic and
+            colourful. The sunrise and sunsets during November at Mara are
+            simply breathtaking.
+          </p>
+
+          <p className="home-para">
+            November is also a time for holidaying and getting together with
+            our families. And the icing on the cake is that we have curated
+            this itinerary at such affordable costs without compromising any
+            of the services. This is to commemorate our first-year anniversary
+            of opening up operations in Nairobi.
+          </p>
+
+          <h2 className="home-subtitle text-center mt-5">
+            Join us on this unforgettable journey of your lifetime.
+          </h2>
+
+          <div className="text-center mt-4">
+            <button type="button" onClick={buttonClick} className="btn btn-outline-info btn-lg custom-button">
+              See the Plans
+            </button>
           </div>
         </div>
-      )}
     </div>
-  )
-}
-export default Home
+  );
+};
+
+export default Home;

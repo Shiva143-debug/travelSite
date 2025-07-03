@@ -1,13 +1,12 @@
-import {Component} from 'react'
-import Slider from 'react-slick'
-import TabItems from '../TabItems'
-import Payment from '../Payment'
+import { useState} from 'react';
+import Slider from 'react-slick';
+import TabItems from '../TabItems';
+import Slidebar from '../Slidebar';
+import { useNavigate } from 'react-router-dom';
 
-import './index.css'
-
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import Slidebar from '../Slidebar'
+import './index.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const List = [
   {
@@ -64,84 +63,69 @@ const List = [
   },
 ]
 
-class Plans extends Component {
-  state = {activeId: List[0].id, showPayment: false}
 
-  clickTab = id => {
-    this.setState({activeId: id})
-  }
+const Plans = () => {
+  const [activeId, setActiveId] = useState(0);
+  const navigate = useNavigate();
 
-  make = () => {
-    this.setState({showPayment: true})
-  }
+  const clickTab = (id) => {
+    setActiveId(id);
+  };
 
-  renderselectedTab = () => {
-    const {activeId} = this.state
-    const {text, text2, heading, imageAltText, imageUrl1, imageUrl2} = List[
-      activeId
-    ]
+  const makePayment = () => {
+    navigate('/payment');
+  };
 
-    const settings = {
-      dots: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    }
-    return (
-      <div>
-        <h1>{heading}</h1>
-        <p className="r-text">{text}</p>
-        <div>
-          <div className="slider-container">
+  const { heading, text, text2, imageAltText, imageUrl1, imageUrl2 } = List[activeId];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
+
+  return (
+    <div className="plans">
+      <Slidebar />
+      <div className="mt-3">
+        <ul className="tab-list mx-5">
+          {List.map((item) => (
+            <TabItems key={item.id} Details={item} isactive={activeId === item.id} clickTab={clickTab}/>
+          ))}
+        </ul>
+
+        <div className="tab-content">
+          <h3 className="px-5 mb-3">{heading}</h3>
+          <p className="px-5 mb-4">{text}</p>
+
+          <div className="slider-container mb-4">
             <Slider {...settings}>
-              <div>
-                <img className="r-image" alt={imageAltText} src={imageUrl1} />
+              <div className="d-flex justify-content-center">
+                <img className="slider-img" alt={imageAltText} src={imageUrl1} style={{ width: '90%', height: '500px', borderRadius: '10px' }}/>
               </div>
-              <div>
-                <img className="r-image" alt={imageAltText} src={imageUrl2} />
+              <div className="d-flex justify-content-center">
+                <img className="slider-img" alt={imageAltText} src={imageUrl2} style={{ width: '90%', height: '500px', borderRadius: '10px' }}/>
               </div>
             </Slider>
           </div>
-          <p className="r-text">{text2}</p>
-        </div>
-      </div>
-    )
-  }
 
-  render() {
-    const {activeId, showPayment} = this.state
-    return (
-      <div className="plans">
-        <div>
-          {showPayment ? (
-            <Payment />
-          ) : (
-            <div>
-              <Slidebar/>
-              <ul className="main-list-container">
-                {List.map(each => (
-                  <TabItems
-                    key={each.id}
-                    Details={each}
-                    isactive={activeId === each.id}
-                    clickTab={this.clickTab}
-                  />
-                ))}
-              </ul>
-              {this.renderselectedTab()}
-              <p className="payment-info">
-                do you want to visit the places please press the below button to
-                make payments
-              </p>
-              <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-              <button type="button" onClick={this.make} className="button">
-                make payment
-              </button>
-              </div>
-            </div>
-          )}
+          <p className="px-5">{text2}</p>
+        </div>
+
+        <div className="text-center mt-5">
+          <p className="lead"> Ready to explore these amazing destinations? <br />Click the button below to proceed with your booking. </p>
+          <button type="button" className="btn btn-outline-success btn-lg mt-3 mb-5" onClick={makePayment}>
+            Make Payment
+          </button>
         </div>
       </div>
-    )
-  }
-}
-export default Plans
+    </div>
+  );
+};
+
+export default Plans;
+

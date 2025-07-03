@@ -1,48 +1,56 @@
-import {useState} from 'react'
-import Payment from '../Payment'
-import './index.css'
-import Slidebar from '../Slidebar'
+import Slidebar from '../Slidebar';
+import { useNavigate } from 'react-router-dom';
+import './index.css';
 
 const Cost = () => {
-  const [showAnotherComponent, setShowAnotherComponent] = useState(false)
+  const navigate = useNavigate();
+
   const makePayment = () => {
-    setShowAnotherComponent(true)
-  }
+    navigate('/payment');
+  };
+
   return (
-    <div>
-      {showAnotherComponent ? (
-        <Payment />
-      ) : (
+    <div className="cost-page">
+
         <div className="cost">
-          <Slidebar/>
-          <p className="c-p">
-            * <span>Cost per adult, Ex Nairobi</span> - USD1582/- incl of local
-            taxes
-          </p>
-          <p className="c-p">
-            * <span>child ( 4 to 9 years ), Ex Nairobi</span> - USD 1400/- incl
-            of taxes
-          </p>
-          <h2>
-            Special Independence Day offer valid for bookings made on or before
-            till August 14th 2023 - Cost per adult - USD 1322
-          </h2>
-          <h2>
-            Special Independence Day offer valid for bookings made on or before
-            till August 14th 2023 - Cost per child - USD 1127
-          </h2>
-          <p className="payment-info">
-            do you want to visit the places please press the below button to
-            make payments
-          </p>
-          <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-          <button type="button" onClick={makePayment} className="button">
-            make payment
-          </button>
+          <Slidebar />
+          <div className="cost-details my-4">
+            <ul className="list-unstyled">
+              <li className="mb-2">
+                <strong>• Cost per adult (Ex Nairobi):</strong> USD 1582/- (incl. of local taxes)
+              </li>
+              <li className="mb-2">
+                <strong>• Cost per child (4 to 9 years, Ex Nairobi):</strong> USD 1400/- (incl. of local taxes)
+              </li>
+            </ul>
+
+            <div className="special-offers my-4">
+              <h5 className="text-success fw-bold">
+                🎉 Special Independence Day Offer (valid until August 14th, 2023)
+              </h5>
+              <ul className="list-unstyled mt-2">
+                <li>
+                  <strong>• Adult:</strong> USD 1322
+                </li>
+                <li>
+                  <strong>• Child:</strong> USD 1127
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-4">
+            <p className="payment-info lead">
+              Want to visit these amazing places? Click the button below to make a payment.
+            </p>
+            <button type="button" onClick={makePayment} className="btn btn-outline-primary btn-lg mt-3">
+              Make Payment
+            </button>
           </div>
         </div>
-      )}
+
     </div>
-  )
-}
-export default Cost
+  );
+};
+
+export default Cost;

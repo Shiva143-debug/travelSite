@@ -11,7 +11,7 @@ const TabItems = props => {
   }
 
   return (
-    <div className="container">
+    <div className="d-flex">
       <li className="list-item-container">
         <button type="button" className={TabClassnames} onClick={onClickImage}>
           Day{id + 1}

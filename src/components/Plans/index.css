@@ -1,32 +1,20 @@
-.main-list-container {
-  display: flex;
-justify-content: center;
-}
-.r-text {
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  /* text-align: center; */
-  /* margin-left: 100px;
-  margin-right: 50px; */
-}
-.r-image {
-  width: 85%;
-  height: 400px;
-  margin-left: 100px;
-  @media (max-width:768px) {
-    width:60%;
-    height: 50%;
-  }
-}
-.payment-info {
-  color: white;
-  text-align: center;
-}
-.plans{
+
+
+ .plans {
   background-image: url(https://res.cloudinary.com/dxgbxchqm/image/upload/v1721734044/black-white_iidqap.webp);
   background-size: cover;
   color: white;
   min-height: 100vh;
   height: 100%;
+  width: 100%;
+}
+
+.tab-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
 }
